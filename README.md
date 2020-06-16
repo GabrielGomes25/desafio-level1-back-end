@@ -9,11 +9,22 @@ Desafios sobre Conceitos do Node.js aplicados no Bootcamp GoStack
 git clone git@github.com:GabrielGomes25/desafio-level1-back-end.git
 ```
 
-## Sobre
-Esse é o meu resultado do primeiro desafio do Bootcamp GoStack
-Nesse desafio foi preciso passar pelos principais métodos http para fazer um CRUD de repositórios para portifólios
+### Rotas da aplicação
 
-## Para que o desafio fosse aceito, os seguintes testes foram cumpridos:
+Agora que você já está com o template clonado, e pronto para continuar, você deve abrir o arquivo app.js, e completar onde não possui código com o código para atingir os objetivos de cada rota.
+
+- **`POST /repositories`**: A rota deve receber `title`, `url` e `techs` dentro do corpo da requisição, sendo a URL o link para o github desse repositório. Ao cadastrar um novo projeto, ele deve ser armazenado dentro de um objeto no seguinte formato: `{ id: "uuid", title: 'Desafio Node.js', url: 'http://github.com/...', techs: ["Node.js", "..."], likes: 0 }`; Certifique-se que o ID seja um UUID, e de sempre iniciar os likes como 0.
+
+- **`GET /repositories`**: Rota que lista todos os repositórios;
+
+- **`PUT /repositories/:id`**: A rota deve alterar apenas o `title`, a `url` e as `techs` do repositório que possua o `id` igual ao `id` presente nos parâmetros da rota;
+
+- **`DELETE /repositories/:id`**: A rota deve deletar o repositório com o `id` presente nos parâmetros da rota;
+
+- **`POST /repositories/:id/like`**: A rota deve aumentar o número de likes do repositório específico escolhido através do `id` presente nos parâmetros da rota, a cada chamada dessa rota, o número de likes deve ser aumentado em 1;
+
+## Testes:
+Executar "yarn test".
 
 - **`should be able to create a new repository`**: Para que esse teste passe, sua aplicação deve permitir que um repositório seja criado, e retorne um json com o projeto criado.
 
